@@ -5,7 +5,7 @@ tokens = [
     'VARIABLE', 'CONSTANTE', 'NULL', 'INICIOFUNCION', 'ZERO', 'EMPTY', 'QUOT', 'DEC', 'IF',
     'NUMERO', 'SUMA', 'RESTA', 'TIMES', 'DIVIDIR', 'IGUAL', 'DOBLEIGUAL',
     'MENOR', 'MAYOR', 'PARENTESISIZQ', 'PARENTESISDER', 'CORCHETEIZQ', 'CORCHETEDER',
-    'MAYORIGUAL', 'MENORIGUAL']
+    'MAYORIGUAL', 'MENORIGUAL', 'NOIGUAL']
 
 t_ignore = '\t'
 t_SUMA = r'\+'
@@ -28,8 +28,9 @@ t_IF = r'^if'
 t_DOBLEIGUAL = r'^=='
 t_MAYORIGUAL = r'\>='
 t_MENORIGUAL = r'\<='
+t_NOIGUAL = r'\!='
 
-t_VARIABLE = r'$[a-zA-Z ][=]|[a-zA-Z_][a-zA-Z0-9_]*'
+t_VARIABLE = r'$[a-zA-Z][=]|[a-zA-Z_][a-zA-Z0-9_]*'
 
 
 def t_CONSTANTE(t):
@@ -116,6 +117,8 @@ def p_operaciones(p):
         | MAYORIGUAL valor valor
         | EQUALS VARIABLE valor
         | EQUALS VARIABLE VARIABLE
+        | NOIGUAL VARIABLE valor
+        | NOIGUAL VARIABLE VARIABLE
         | DOBLEIGUAL VARIBALE VARIABLE
         | DOBLEIGUAL VARIABLE VALOR
         | DOBLEIGUAL VALOR VALOR'''
