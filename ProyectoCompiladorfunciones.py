@@ -129,7 +129,7 @@ def p_expresionrecursivacompleta(p):
 
 def p_expresiontotal(p):
 	'''exp: PARENTESISIZQ expresion PARENTESISDER
-	| PARENTESISIZQ operacionPAR ENTESISDER
+	| PARENTESISIZQ operacion PARENTESISDER
 	| PARENTESISIZQ expresiones PARENTESISDER
 	| PARENTESISIZQ validarif PARENTESISDER
 	| PARENTESISIZQ recursiva1 PARENTESISDER
