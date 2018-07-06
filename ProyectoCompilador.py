@@ -78,7 +78,6 @@ def t_ifzero(t):
 
 def t_ntrproducto (t):
     x,y
-    if(zero? x)
     t.value=0
     t.value=(+ y (ntrproducto (dec x) y))))
 
