@@ -76,13 +76,8 @@ def t_ifzero(t):
     t.value=int(t.value)
     return t
 
-def t_ntrproducto (t):
-    x,y
-    t.value=0
-    t.value=(+ y (ntrproducto (dec x) y))))
-
-def t_ntrfactorial (x):
-  r'\d+!'
-    x.value=1
-    x.value=(* x (ntrfactorial (dec x)))))
-  return x
+def t_ntrfactorial (t):
+    r'[ntrfactorial][(][dec(][a-z][)][)]*'
+    t.value=1
+    t.value=int((* t (ntrfactorial (dec (t)))))
+    return t
