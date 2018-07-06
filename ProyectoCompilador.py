@@ -82,7 +82,7 @@ def t_ntrproducto (t):
     t.value=(+ y (ntrproducto (dec x) y))))
 
 def t_ntrfactorial (x):
-  r'if+(+[0]+?+ [0-9]+)'
+  r'\d+!'
     x.value=1
     x.value=(* x (ntrfactorial (dec x)))))
   return x
