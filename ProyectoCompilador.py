@@ -65,3 +65,25 @@ def t_COMMENT(t):
     r'\#.*'
     pass
 
+def t_dec(t):
+    r'[dec][(][a-z][)]*'
+    t.value=t.value-1
+    return t
+
+def t_ifzero(t):
+    r'[if(zero?][a-z][)]+'
+    t.value=0
+    t.value=int(t.value)
+    return t
+
+def t_ntrproducto (t):
+    x,y
+    if(zero? x)
+    t.value=0
+    t.value=(+ y (ntrproducto (dec x) y))))
+
+def t_ntrfactorial (x):
+  r'if+(+[0]+?+ [0-9]+)'
+    x.value=1
+    x.value=(* x (ntrfactorial (dec x)))))
+  return x
